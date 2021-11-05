@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_skeleton/repositories/authentication_repository/src/models/access_tokens.dart';
-
-const baseUrl = 'https://dev-api.symptomatical.com/api/v1/';
+import 'package:flutter_skeleton/environment_config.dart';
 
 class MainApiProvider {
   late Dio _dio;
@@ -18,7 +17,7 @@ class MainApiProvider {
 
   MainApiProvider._initialize() {
     _dio = Dio(BaseOptions(
-      baseUrl: baseUrl,
+      baseUrl: EnvironmentConfig.BASE_URL,
     ));
   }
   setTokens(AccessTokens? tokens) {
